@@ -32,7 +32,8 @@ function getUsers(){
         localStorage.getItem(outputLocal);
         document.getElementById('outputLocal').innerHTML = outputLocal; 
         console.log(outputLocal);
-       
+       //log giving--- <div id = "outputLocal">[object HTMLDivElement]</div>
+       // parse() not working , content -type in header may be problem 
     })
     .catch(err => console.log(err));}
 
@@ -44,7 +45,7 @@ function getUsers(){
     .then(data =>console.log(data))
     .catch(err => console.log(err));}
 
-    
+
 //deletes user 2 on jsonplaceholder and clears localstorage
  function deleteUser() {
     http.delete('https://jsonplaceholder.typicode.com/users/2')
