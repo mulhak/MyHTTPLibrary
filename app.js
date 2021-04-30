@@ -20,7 +20,7 @@ function getUsers(){
       .catch(err => console.log(err));}
 
 
-//User Data for post,put and delete..
+//User Data for post, put and delete..
  const data = {
    name: 'Kieran Mulhall',
    username:'Jackdaw'
@@ -28,13 +28,12 @@ function getUsers(){
 
  function createUser(){
     http.post('https://jsonplaceholder.typicode.com/users', data)
-    .then(data =>{
+    .then(data => {console.log(data)
         localStorage.getItem(outputLocal);
-        document.getElementById('outputLocal').innerHTML =data 
-        // incorrect above as this is going to jsonplaceholder......
-
-
-    }) 
+        document.getElementById('outputLocal').innerHTML = outputLocal; 
+        console.log(outputLocal);
+       
+    })
     .catch(err => console.log(err));}
 
 
@@ -45,9 +44,11 @@ function getUsers(){
     .then(data =>console.log(data))
     .catch(err => console.log(err));}
 
-
+    
+//deletes user 2 on jsonplaceholder and clears localstorage
  function deleteUser() {
     http.delete('https://jsonplaceholder.typicode.com/users/2')
-    .then(data =>console.log(data))
+    .then(data =>{console.log(data);
+      localStorage.clear()})
     .catch(err => console.log(err));}
     
