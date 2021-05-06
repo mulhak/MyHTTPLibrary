@@ -28,13 +28,7 @@ function getUsers(){
 
  function createUser(){
     http.post('https://jsonplaceholder.typicode.com/users', data)
-    .then(data => {console.log(data)
-        localStorage.getItem(outputLocal);
-        document.getElementById('outputLocal').innerHTML = outputLocal; 
-        console.log(outputLocal);
-       //log giving--- <div id = "outputLocal">[object HTMLDivElement]</div>
-       // parse() not working , content -type in header may be problem 
-    })
+    .then(data => {console.log(data)})
     .catch(err => console.log(err));}
 
 
